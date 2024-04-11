@@ -38,7 +38,7 @@ object biblioteca {
 		return madera
 	}
 }
- object muneco {
+ object munheco {
  	var peso = 1500
  	
  	method peso(){
@@ -51,22 +51,91 @@ object biblioteca {
  		return vidrio
  	}
  	method estaMojado(){
- 		return peso + 300
+ 		peso = peso + 300
  	}
  	method estaConRotura(){
- 		return peso - 200
+ 		peso =  peso - 200
+ 	}
+ 	method cambiarPeso(nuevoPeso){
+ 		peso = nuevoPeso
  	}
  }
  
  object placa{
- 	peso = 1500
- 	color = celeste
+ 	var peso = 1500
+ 	var color = celeste
+ 	
+ 	method peso(){
+ 		return peso
+ 	}
+ 	method color(){
+ 		return color
+ 	}
  	
  	method material(){
  		return cobre
  	}
  	
+ 	method cambiarPeso(nuevoPeso){
+ 		peso = nuevoPeso
+ 	}
+ 	method cambiarColor(colorNuevo){
+ 		color = colorNuevo
+ 	}
+ 	
  }
+  
+  object unArito {
+  	
+  	method peso(){
+ 		return 180
+ 	}
+ 	method color(){
+ 		return celeste
+ 	}
+ 	
+ 	method material(){
+ 		return cobre
+ 	}
+ 	
+  }
+  
+  object unBanquito {
+  	 var color = naranja
+  	
+  	method peso(){
+ 		return 1700
+ 	}
+ 	method color(){
+ 		return color
+ 	}
+ 	
+ 	method material(){
+ 		return madera
+ 	}
+ 	method cambiarColor(nuevoColor){
+ 		color = nuevoColor
+ 	}
+ 	
+  }
+  
+  object unaCajita {
+  	 var objeto = unArito
+  	 
+  	method peso(){
+ 		return 400 + objeto.peso()
+ 	}
+ 	method color(){
+ 		return rojo
+ 	}
+ 	
+ 	method material(){
+ 		return cobre
+ 	}
+ 	method cambiarObjeto(objetoNuevo) {
+ 		objeto = objetoNuevo
+ 	}
+  }
  
  //colores
  
@@ -78,6 +147,12 @@ object biblioteca {
  }
  
  object verde{
+ 	
+ 	method esFuerte(){
+ 		return true
+ 	}
+ }
+ object naranja{
  	
  	method esFuerte(){
  		return true
